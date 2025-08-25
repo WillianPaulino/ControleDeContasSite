@@ -13,8 +13,8 @@ export default function ObrigadoPage() {
                 <div className="mt-8 text-left bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4 rounded">
                     <p className="font-bold">Instruções Importantes</p>
                     {/* --- CORREÇÃO AQUI --- */}
-                    {/* Trocamos as aspas duplas internas por aspas simples */}
-                    <p className="text-sm">Para instalar, você talvez precise habilitar a opção 'Instalar de fontes desconhecidas' nas configurações de segurança do seu Android.</p>
+                    {/* Usamos o código de escape '&apos;' para o apóstrofo/aspa simples */}
+                    <p className="text-sm">Para instalar, você talvez precise habilitar a opção &apos;Instalar de fontes desconhecidas&apos; nas configurações de segurança do seu Android.</p>
                 </div>
             </div>
         </div>

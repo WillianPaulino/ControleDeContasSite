@@ -54,7 +54,7 @@ export default function HomePage() {
       <section id="preco" className="bg-white py-12">
         <div className="container mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold mb-4">Acesso Vitalício por um Preço Único</h3>
-          <p className="text-5xl font-bold text-blue-800 mb-6">R$ 19,90</p>
+          <p className="text-5xl font-bold text-blue-800 mb-6">R$ 9,99</p>
           <a
             href="https://mpago.la/1qn7xpt" // Passo 3.2
             target="_blank"

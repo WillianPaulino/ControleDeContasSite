@@ -1,18 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-// --- INÍCIO DA CORREÇÃO ---
-// Importa o cliente e a interface de preferência da nova SDK
 import { MercadoPagoConfig, Preference } from 'mercadopago';
-// --- FIM DA CORREÇÃO ---
-import prisma from '@/lib/prisma';
+// --- CORREÇÃO AQUI ---
+import { prisma } from '@/lib/prisma';
 
-// --- INÍCIO DA CORREÇÃO ---
-// Cria um novo cliente de configuração com o seu Access Token
 const client = new MercadoPagoConfig({ accessToken: process.env.MERCADOPAGO_ACCESS_TOKEN! });
-// --- FIM DA CORREÇÃO ---
 
 export async function POST(req: NextRequest) {
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions); // Usa authOptions para obter a sessão correta
 
   if (!session?.user?.email) {
     return NextResponse.json({ error: 'Usuário não autenticado' }, { status: 401 });
@@ -44,11 +39,8 @@ export async function POST(req: NextRequest) {
   };
 
   try {
-    // --- INÍCIO DA CORREÇÃO ---
-    // Cria uma instância do controlador de Preferências e chama o método create
     const preference = new Preference(client);
     const result = await preference.create({ body: preferenceData });
-    // --- FIM DA CORREÇÃO ---
     
     return NextResponse.json({ id: result.id, init_point: result.init_point });
   } catch (error) {
@@ -56,3 +48,5 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Erro ao criar pagamento' }, { status: 500 });
   }
 }
+// Adicione esta importação para que a sessão funcione nas APIs
+import { authOptions } from '../auth/[...nextauth]/route';

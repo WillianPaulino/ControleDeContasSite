@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
         title: 'Controle de Contas - Acesso Vitalício',
         quantity: 1,
         currency_id: 'BRL',
-        unit_price: 19.90,
+        unit_price: 10.00,
       },
     ],
     back_urls: {

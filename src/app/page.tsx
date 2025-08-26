@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import BuyButton from './BuyButton';
 
 export default function HomePage() {
   return (
@@ -50,19 +51,17 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* Seção de Preço e CTA */}
+       {/* Seção de Preço e CTA */}
       <section id="preco" className="bg-white py-12">
         <div className="container mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold mb-4">Acesso Vitalício por um Preço Único</h3>
-          <p className="text-5xl font-bold text-blue-800 mb-6">R$ 9,9</p>
-          <a
-            href="https://mpago.la/1qn7xpt" // Passo 3.2
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-8 rounded-lg text-xl transition duration-300"
-          >
-            Garantir meu Acesso
-          </a>
+          <p className="text-5xl font-bold text-blue-800 mb-6">R$ 9,99</p>
+          
+          {/* BOTÃO ATUALIZADO */}
+          <BuyButton />
+          
+        </div>
+      </section>
         </div>
       </section>
 

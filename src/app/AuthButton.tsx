@@ -5,10 +5,12 @@ import Image from 'next/image';
 export default function AuthButton() {
   const { data: session, status } = useSession();
 
+  // Mostra um placeholder enquanto a sessão está carregando
   if (status === 'loading') {
     return <div className="w-24 h-10 bg-gray-200 rounded animate-pulse"></div>;
   }
 
+  // Se o usuário estiver logado, mostra a foto e o botão de sair
   if (session) {
     return (
       <div className="flex items-center gap-4">
@@ -31,6 +33,7 @@ export default function AuthButton() {
     );
   }
 
+  // Se não estiver logado, mostra o botão de login com Google
   return (
     <button
       onClick={() => signIn('google')}

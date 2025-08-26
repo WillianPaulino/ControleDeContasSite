@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import BuyButton from './BuyButton';
+import BuyButton from './BuyButton'; // Importa o nosso novo botão
 
 export default function HomePage() {
   return (
@@ -9,12 +9,11 @@ export default function HomePage() {
         <div className="container mx-auto px-6 py-16 text-center">
           <h1 className="text-5xl font-bold mb-2">Controle de Contas</h1>
           <h2 className="text-2xl mb-8">A maneira mais simples de organizar suas finanças.</h2>
-          {/* O link de pagamento irá aqui */}
           <a
-            href="#preco" // Link interno para a seção de preço
+            href="#preco"
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg text-lg transition duration-300"
           >
-            Comprar Agora
+            Ver Planos
           </a>
         </div>
       </header>
@@ -38,10 +37,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Seção com Imagem do App */}
         <div className="mt-20 flex flex-col md:flex-row items-center">
           <div className="md:w-1/2">
-             {/* Adicione um screenshot do seu app na pasta 'public' */}
             <Image src="/app-screenshot.png" alt="Screenshot do App Controle de Contas" width={500} height={500} className="rounded-lg shadow-2xl"/>
           </div>
           <div className="md:w-1/2 md:pl-12 mt-8 md:mt-0">
@@ -51,17 +48,15 @@ export default function HomePage() {
         </div>
       </main>
 
-       {/* Seção de Preço e CTA */}
+      {/* Seção de Preço e CTA */}
       <section id="preco" className="bg-white py-12">
         <div className="container mx-auto px-6 text-center">
           <h3 className="text-3xl font-bold mb-4">Acesso Vitalício por um Preço Único</h3>
-          <p className="text-5xl font-bold text-blue-800 mb-6">R$ 9,99</p>
+          <p className="text-5xl font-bold text-blue-800 mb-6">R$ 19,90</p>
           
-          {/* BOTÃO ATUALIZADO */}
+          {/* Usamos nosso componente de botão inteligente aqui */}
           <BuyButton />
           
-        </div>
-      </section>
         </div>
       </section>
 

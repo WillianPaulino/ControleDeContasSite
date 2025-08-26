@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-import { prisma } from '@/lib/prisma'; // Importação correta
-import { authOptions } from '../auth/[...nextauth]/route'; // Importa authOptions
+import { prisma } from '@/lib/prisma';
+import { authOptions } from '../auth/[...nextauth]/route';
 
 // SUBSTITUA PELA URL REAL DO SEU APK NO GITHUB RELEASES
 const APK_URL = "https://github.com/WillianPaulino/ControleDeContasSite/releases/download/v1.0/ControleDeContas.apk";
